@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        header {
+            background: url('https://images.pexels.com/photos/14749769/pexels-photo-14749769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeInDown 2s ease;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            animation: fadeInUp 2s ease;
+        }
+
+        header .btn {
+            background: #6200ea;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+            animation: fadeInUp 2.5s ease;
+        }
+
+        header .btn:hover {
+            background: #3700b3;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #3700b3;
+        }
+
+        /* About Section */
+        #about {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #bb86fc;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 5rem 2rem;
+            background: #1e1e1e;
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #bb86fc;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            background: #2c2c2c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #cccccc;
+            margin: 0 1rem 1rem;
+        }
+
+        .project-card a {
+            display: block;
+            margin: 0 1rem 1rem;
+            color: #bb86fc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #121212;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #bb86fc;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #contact ul li {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        #contact ul li a {
+            color: #bb86fc;
+            text-decoration: none;
+        }
+
+        #contact ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-icons a {
+            color: #bb86fc;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my journey and explore my projects</p>
+        <a href="#about" class="btn">Learn More</a>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm Nurnight, a passionate full-stack developer with a deep love for crafting beautiful and efficient web applications. I thrive on solving complex problems and continuously improving my skills.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>A detailed description of your first project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>A detailed description of your second project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>A detailed description of your third project.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, feel free to reach out via the following platforms:</p>
+        <ul>
+            <li>Email: <a href="mailto:nurzhigit.nurdauletuly@gmail.com">nurzhigit.nurdauletuly@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/nurnight" target="_blank">linkedin.com/in/nurnight</a></li>
+            <li>GitHub: <a href="https://github.com/nurnight" target="_blank">github.com/nurnight</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nurnight. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/nurnight" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/nurnight" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
