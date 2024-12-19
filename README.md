@@ -1,16 +1,12 @@
-## Hi there 👋
+Cәлем 
 
-<!--
-**nurnight/nurnight** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+1. HTML,CSS и JavaScript. (1 ай)
+2. Фреймворктар React и Vue. (1 ай) 
+3. DL JavaScript, Node.js, Express. (1.5 ай)
+4. База данных. (1 ай)
+5. Тестирование API и API ды еңгізу.
+6. Основы Docker и CI/CD.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+1 ай ровно 30 күн. 
+0.5 ай 15 күн.
+1.5 ай 45 күн.
